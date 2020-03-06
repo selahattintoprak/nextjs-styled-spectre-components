@@ -1,0 +1,19 @@
+// Defined colors to override default ones
+@import "colors";
+
+// Import full Spectre source code
+//@import "node_modules/spectre.css/src/spectre";
+
+// Variables and mixins
+@import "node_modules/spectre.css/src/variables";
+@import "node_modules/spectre.css/src/mixins"; // Medium
+
+/*! Spectre.css v#{$version} | MIT License | github.com/picturepan2/spectre */
+// Reset and dependencies
+@import "node_modules/spectre.css/src/normalize"; // Medium
+@import "node_modules/spectre.css/src/base"; // Small
+
+// Utility classes
+@import "node_modules/spectre.css/src/animations"; //Small
+@import "node_modules/spectre.css/src/utilities"; //Samll
+//@import "node_modules/spectre.css/src/spectre.scss";

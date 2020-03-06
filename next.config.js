@@ -7,7 +7,7 @@ module.exports = {
         {
           loader: require('styled-jsx/webpack').loader,
           options: {
-            type: 'scoped',
+            type: 'global',
           },
         },
         'sass-loader',

@@ -1,8 +1,9 @@
-import styles from '../styles/style.scss'
-
+import Button from "../ui-components/button/button";
+export const config = { amp: "hybrid" };
 export default () => (
-  <div>
+  <>
     Hello World!
-    <style jsx>{styles}</style>
-  </div>
-)
+    <Button></Button>
+    <Button></Button>
+  </>
+);
