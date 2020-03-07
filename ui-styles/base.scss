@@ -1,11 +1,8 @@
-// Defined colors to override default ones
-@import "colors";
-
 // Import full Spectre source code
 //@import "node_modules/spectre.css/src/spectre";
 
 // Variables and mixins
-@import "node_modules/spectre.css/src/variables";
+@import "variables";
 @import "node_modules/spectre.css/src/mixins"; // Medium
 
 /*! Spectre.css v#{$version} | MIT License | github.com/picturepan2/spectre */

@@ -1,9 +1,8 @@
-import Button from "../ui-components/button/button";
+import Button from "../ui-components/button";
 export const config = { amp: "hybrid" };
 export default () => (
   <>
     Hello World!
-    <Button></Button>
     <Button></Button>
   </>
 );
