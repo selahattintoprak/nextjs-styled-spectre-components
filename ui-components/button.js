@@ -1,4 +1,4 @@
-import { ButtonStyles } from "../ui-styles/styles";
+import { ButtonsStyles } from "../ui-styles/styles";
 export default () => (
   <div>
     <button className="btn">default button</button>
@@ -39,6 +39,6 @@ export default () => (
       <button className="btn">second button</button>
       <button className="btn">third button</button>
     </div>
-    <ButtonStyles />
+    <ButtonsStyles />
   </div>
 );

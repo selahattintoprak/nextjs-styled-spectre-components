@@ -1,4 +1,4 @@
-import styles from "../styles/style.scss";
+import styles from "../ui-styles/styles.scss";
 
 function MyApp({ Component, pageProps }) {
   return (
