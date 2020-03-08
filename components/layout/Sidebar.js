@@ -1,4 +1,5 @@
 import Brand from "./Brand";
+import sidebarScss from "./sidebar.scss";
 export default () => (
   <>
     <div className="docs-sidebar off-canvas-sidebar" id="sidebar" style={{ background: "#f7f8f9" }}>
@@ -234,5 +235,8 @@ export default () => (
       </div>
     </div>
     <a className="off-canvas-overlay" href="#close"></a>
+    <style jsx global>
+      {sidebarScss}
+    </style>
   </>
 );

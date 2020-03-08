@@ -3,14 +3,49 @@
 
 // Variables and mixins
 @import "variables";
-@import "node_modules/spectre.css/src/mixins"; // Medium
+@import "./mixins/shadow";
 
-/*! Spectre.css v#{$version} | MIT License | github.com/picturepan2/spectre */
-// Reset and dependencies
-@import "node_modules/spectre.css/src/normalize"; // Medium
-@import "node_modules/spectre.css/src/base"; // Small
+// Base
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-// Utility classes
-@import "node_modules/spectre.css/src/animations"; //Small
-@import "node_modules/spectre.css/src/utilities"; //Samll
-//@import "node_modules/spectre.css/src/spectre.scss";
+html {
+  box-sizing: border-box;
+  font-size: $html-font-size;
+  line-height: $html-line-height;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: $body-bg;
+  color: $body-font-color;
+  font-family: $body-font-family;
+  font-size: $font-size;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: $link-color;
+  outline: none;
+  text-decoration: none;
+
+  &:focus {
+    @include control-shadow();
+  }
+
+  &:focus,
+  &:hover,
+  &:active,
+  &.active {
+    color: $link-color-dark;
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $link-color-light;
+  }
+}

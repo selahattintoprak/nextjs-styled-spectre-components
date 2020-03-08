@@ -1,0 +1,42 @@
+// Variables and mixins
+@import "../../ui-styles/variables.scss";
+@import "node_modules/spectre.css/src/mixins";
+
+.docs-brand {
+    color: $primary-color;
+    height: 2rem;
+    left: 1.5rem;
+    position: fixed;
+    top: .85rem;
+  
+    .docs-logo {
+      align-items: center;
+      border-radius: $border-radius;
+      display: inline-flex;
+      font-size: .7rem;
+      height: 2rem;
+      padding: .2rem;
+      width: auto;
+      
+      &:focus,
+      &:hover {
+        text-decoration: none;
+      }
+    
+      img {
+        display: inline-block;
+        height: auto;
+        width: 1.6rem;
+      }
+    
+      h2 {
+        display: inline-block;
+        font-size: .8rem;
+        font-weight: 700;
+        line-height: 1.5rem;
+        margin-bottom: 0;
+        margin-left: .5rem;
+        margin-right: .3rem;
+      }
+    }
+  }

@@ -1,0 +1,9 @@
+@import "./base.scss";
+$color: #2ecc71;
+
+text {
+  background-color: $color;
+  :hover {
+    background-color: darken($color, 20%);
+  }
+}

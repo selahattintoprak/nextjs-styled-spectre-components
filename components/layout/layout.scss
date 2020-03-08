@@ -1,8 +1,348 @@
-
 // Variables and mixins
 @import "../../ui-styles/variables.scss";
-@import "node_modules/spectre.css/src/mixins"; // Medium
-@import "node_modules/spectre.css/src/spectre.scss";
-@import "node_modules/spectre.css/src/icons.scss";
-@import "node_modules/spectre.css/src/spectre-exp.scss";
-@import "node_modules/spectre.css/docs/src/scss/docs.scss";
+@import "node_modules/spectre.css/src/mixins";
+
+.off-canvas {
+  .off-canvas-toggle {
+    font-size: 1rem;
+    left: 1.5rem;
+    position: fixed;
+    top: 1rem;
+  }
+
+  .off-canvas-sidebar {
+    width: 12rem;
+  }
+
+  .off-canvas-content {
+    padding: 0;
+  }
+}
+
+.docs-container {
+  min-height: 100vh;
+}
+
+.docs-content {
+  flex: 1 1 auto;
+  padding: 0 4rem;
+  width: calc(100vw - 12rem);
+
+  & > .container {
+    margin-left: 0;
+    max-width: 800px;
+    padding-bottom: 1.5rem;
+  }
+
+  .anchor {
+    color: $primary-color-light;
+    display: none;
+    margin-left: 0.2rem;
+    padding: 0 0.2rem;
+    &:focus,
+    &:hover {
+      display: inline;
+      text-decoration: none;
+    }
+  }
+
+  .s-title,
+  .s-subtitle {
+    line-height: 1.8rem;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    position: static;
+
+    @supports (position: sticky) {
+      position: sticky;
+      top: 0;
+      z-index: $zindex-1 - 1;
+
+      &::before {
+        background: $light-color;
+        bottom: 0;
+        content: "";
+        display: block;
+        left: -10px;
+        position: absolute;
+        right: -10px;
+        top: -5px;
+        z-index: -$zindex-0;
+      }
+    }
+
+    &:hover {
+      .anchor {
+        display: inline;
+      }
+    }
+
+    & + .docs-note {
+      margin-top: 0.4rem;
+    }
+  }
+
+  .docs-demo {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+
+    .card {
+      box-shadow: 0 0.25rem 1rem rgba($dark-color, 0.15);
+      border: 0;
+      height: 100%;
+    }
+  }
+
+  .column {
+    padding: $layout-spacing;
+  }
+
+  .docs-block {
+    border-radius: $border-radius;
+    padding: $unit-2;
+
+    &.bg-gray {
+      background: $bg-color-dark;
+    }
+  }
+
+  .docs-shape {
+    height: 4.8rem;
+    line-height: 1.2rem;
+    padding: 1.8rem 0;
+    width: 4.8rem;
+  }
+
+  .docs-dot {
+    border-radius: 50%;
+    display: inline-block;
+    height: 0.5rem;
+    padding: 0;
+    width: 0.5rem;
+  }
+
+  .docs-table {
+    th,
+    td {
+      padding: 0.75rem 0.25rem;
+    }
+  }
+
+  .docs-color {
+    border-radius: $border-radius;
+    margin: 0.25rem 0;
+    padding: 5rem 0.5rem 0.5rem;
+
+    .color-subtitle {
+      font-size: $font-size-sm;
+      opacity: 0.75;
+    }
+  }
+
+  .code {
+    .hljs-tag {
+      color: lighten($body-font-color, 10%);
+    }
+
+    .hljs-comment {
+      color: $gray-color;
+    }
+
+    .hljs-title,
+    .hljs-class,
+    .hljs-string,
+    .hljs-number {
+      color: $primary-color;
+    }
+
+    .hljs-name,
+    .hljs-attribute,
+    .hljs-variable,
+    .hljs-keyword,
+    .hljs-built_in {
+      color: $code-color;
+    }
+
+    .hljs-value,
+    .hljs-hexcolor {
+      color: lighten($body-font-color, 10%);
+    }
+  }
+
+  .c-select-all {
+    user-select: all;
+  }
+
+  .panel {
+    height: 75vh;
+
+    .tile {
+      margin: 0.75rem 0;
+    }
+  }
+
+  .parallax {
+    margin: 2rem auto;
+  }
+
+  .form-autocomplete .menu {
+    position: static;
+  }
+
+  .example-tile-icon {
+    align-content: space-around;
+    align-items: center;
+    background: $primary-color;
+    border-radius: $border-radius;
+    color: $light-color;
+    display: flex;
+    font-size: 1.2rem;
+    height: 2rem;
+    width: 2rem;
+
+    .icon {
+      margin: auto;
+    }
+  }
+
+  .comparison-slider {
+    height: auto;
+    padding-bottom: 56.2222%;
+
+    .filter-grayscale {
+      filter: grayscale(75%);
+    }
+  }
+
+  .off-canvas {
+    position: relative;
+
+    .off-canvas-toggle {
+      left: $layout-spacing;
+      position: absolute;
+      top: $layout-spacing;
+      z-index: $zindex-0;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .off-canvas {
+    .off-canvas-toggle {
+      z-index: $zindex-3;
+    }
+
+    .off-canvas-content {
+      width: 100%;
+    }
+  }
+
+  .docs-sidebar {
+    .docs-brand {
+      margin: 0.85rem 1.5rem;
+      padding: 0;
+      position: static;
+    }
+
+    .docs-nav {
+      margin-top: 1rem;
+      position: static;
+    }
+
+    .menu .menu-item > a {
+      padding: 0.3rem 0.4rem;
+    }
+  }
+
+  .docs-navbar {
+    backdrop-filter: blur(5px);
+    background: rgba($bg-color, 0.65);
+    left: 0;
+  }
+
+  .docs-content {
+    min-width: auto;
+    padding: 0 1.5rem;
+    width: 100%;
+
+    .s-title,
+    .s-subtitle {
+      padding-top: 5rem;
+      position: static;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  .section-hero {
+    .s-brand {
+      height: 5rem;
+      padding: 1.5rem 0.5rem;
+      text-align: center;
+      width: 100%;
+
+      .s-logo {
+        height: auto;
+      }
+
+      img {
+        height: 3.2rem;
+        width: 3.2rem;
+      }
+
+      h2 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-hero {
+    h2 {
+      font-size: 0.9rem;
+    }
+    .card {
+      padding: 0;
+    }
+  }
+
+  .off-canvas {
+    .off-canvas-toggle {
+      left: 0.5rem;
+    }
+  }
+
+  .docs-navbar {
+    .btns {
+      right: 0.9rem;
+    }
+  }
+
+  .grid-hero {
+    .docs-brand {
+      left: 0.9rem;
+    }
+  }
+
+  .docs-sidebar {
+    .docs-brand {
+      margin: 0.85rem 1rem;
+    }
+
+    .docs-nav {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .docs-content {
+    padding: 0 0.5rem;
+
+    .docs-block {
+      padding: $unit-2 $unit-h;
+    }
+  }
+}

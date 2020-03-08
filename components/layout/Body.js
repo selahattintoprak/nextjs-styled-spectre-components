@@ -1,3 +1,5 @@
+import bodyScss from "./body.scss";
+import { CardsStyles } from "../../ui-styles/styles";
 export default () => (
   <>
     <div className="docs-ad">
@@ -264,5 +266,9 @@ export default () => (
       </div>
     </div>
     <div className="docs-ad docs-ad-sidebar text-center">test{/* <script id="_carbonads_js" async="" type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CK7DTKQW&amp;placement=picturepan2githubio"></script> */}</div>
+    <CardsStyles/>
+    <style jsx global>
+      {bodyScss}
+    </style>
   </>
 );

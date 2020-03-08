@@ -1,7 +1,12 @@
 // Variables and mixins
 @import "variables";
-@import "node_modules/spectre.css/src/mixins/color.scss";
-@import "node_modules/spectre.css/src/mixins/clearfix.scss";
-@import "node_modules/spectre.css/src/mixins/position.scss";
-@import "node_modules/spectre.css/src/mixins/text.scss";
-@import "node_modules/spectre.css/src/utilities.scss";
+
+@import "utilities/colors";
+@import "utilities/cursors";
+@import "utilities/display";
+@import "utilities/divider";
+@import "utilities/loading";
+@import "utilities/position";
+@import "utilities/shapes";
+@import "utilities/text";
+

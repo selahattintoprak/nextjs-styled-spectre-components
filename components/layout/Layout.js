@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Body from "./Body";
 import Footer from "./Footer";
+import { OffCanvasStyles, ButtonsStyles, LayoutStyles, AccordionsStyles, MenusStyles, TypographyStyles } from "../../ui-styles/styles";
 export default () => (
   <>
     <div className="docs-container off-canvas off-canvas-sidebar-show">
@@ -24,6 +25,12 @@ export default () => (
         </div>
       </div>
     </div>
+    <TypographyStyles/>
+    <LayoutStyles />
+    <AccordionsStyles />
+    <MenusStyles />
+    <OffCanvasStyles />
+    <ButtonsStyles />
     <style jsx global>
       {layoutScss}
     </style>

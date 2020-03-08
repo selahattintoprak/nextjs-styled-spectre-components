@@ -1,3 +1,8 @@
 // Variables and mixins
 @import "variables";
-@import "node_modules/spectre.css/src/icons.scss";
+
+// CSS Icons
+@import "icons/icons-core";
+@import "icons/icons-navigation";
+@import "icons/icons-action";
+@import "icons/icons-object";
