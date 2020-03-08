@@ -1,6 +1,9 @@
 // Variables and mixins
 @import "variables";
 
+//Animations
+@import "animations/slide-down.scss";
+
 // Dropdown
 .dropdown {
   display: inline-block;

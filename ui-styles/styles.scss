@@ -3,17 +3,17 @@
 
 // Variables and mixins
 @import "variables";
-@import "node_modules/spectre.css/src/mixins"; // Medium
+@import "mixins"; // Mixins gets placed in the bundle only when used.
 
 /*! Spectre.css v#{$version} | MIT License | github.com/picturepan2/spectre */
+
 // Reset and dependencies
-@import "node_modules/spectre.css/src/normalize"; // Medium
-@import "./base.scss";
+@import "normalize"; // Medium
+@import "base.scss";
 
 // Utility classes
-@import "node_modules/spectre.css/src/animations"; //Small
-@import "node_modules/spectre.css/src/utilities"; //Samll
-//@import "node_modules/spectre.css/src/spectre.scss";
+@import "utilities"; // Are css classes and will be in the bundle once imported.
+
 $color: #2ecc71;
 
 text {

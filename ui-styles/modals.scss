@@ -2,6 +2,9 @@
 @import "variables";
 @import "./mixins/shadow.scss";
 
+//Animations
+@import "animations/slide-down.scss";
+
 // Modals
 .modal {
   align-items: center;
