@@ -1,12 +1,10 @@
-import styles from "../ui-styles/styles.scss";
+import { StylesStyles } from "../ui-styles/styles";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Component {...pageProps} />{" "}
-      <style jsx global>
-        {styles}
-      </style>
+      <Component {...pageProps} />
+      <StylesStyles />
     </>
   );
 }

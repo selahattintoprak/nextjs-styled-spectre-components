@@ -88,7 +88,7 @@ export const ParallaxStyles = () => <JsxStyle styles={parallaxScss} />;
 export const PopoversStyles = () => <JsxStyle styles={popoversScss} />;
 export const ProgressStyles = () => <JsxStyle styles={progressScss} />;
 export const SlidersStyles = () => <JsxStyle styles={slidersScss} />;
-export const stylesStyles = () => <JsxStyle styles={stylesScss} />;
+export const StylesStyles = () => <JsxStyle styles={stylesScss} />;
 export const StepsStyles = () => <JsxStyle styles={stepsScss} />;
 export const TablesStyles = () => <JsxStyle styles={tablesScss} />;
 export const TabsStyles = () => <JsxStyle styles={tabsScss} />;
