@@ -1,5 +1,5 @@
 import navbarScss from "./navbar.scss";
-import { FormsStyles } from "../../ui-styles/styles";
+import { FormsStyles, IconsStyles } from "../../ui-styles/styles";
 
 export default () => (
   <>
@@ -17,7 +17,8 @@ export default () => (
         </a>
       </div>
     </div>
-    <FormsStyles/>
+    <FormsStyles />
+    <IconsStyles />
     <style jsx global>
       {navbarScss}
     </style>
