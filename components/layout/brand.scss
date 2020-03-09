@@ -2,14 +2,14 @@
 @import "../../ui-styles/variables.scss";
 @import "node_modules/spectre.css/src/mixins";
 
-.docs-brand {
+.app-brand {
     color: $primary-color;
     height: 2rem;
     left: 1.5rem;
     position: fixed;
     top: .85rem;
   
-    .docs-logo {
+    .app-logo {
       align-items: center;
       border-radius: $border-radius;
       display: inline-flex;

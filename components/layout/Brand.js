@@ -3,8 +3,8 @@ import brandScss from "./brand.scss";
 import { LabelsStyles } from "../../ui-styles/styles";
 export default () => (
   <>
-    <div className="docs-brand">
-      <a className="docs-logo" href="index.html">
+    <div className="app-brand">
+      <a className="app-logo" href="index.html">
         {useAmp() ? (
           <amp-img alt="Spectre.css CSS Framework" src="spectre-logo.svg" height="32" width="32" />
         ) : (

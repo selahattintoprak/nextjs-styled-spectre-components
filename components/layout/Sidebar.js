@@ -2,12 +2,12 @@ import Brand from "./Brand";
 import sidebarScss from "./sidebar.scss";
 export default () => (
   <>
-    <div className="docs-sidebar off-canvas-sidebar" id="sidebar" style={{ background: "#f7f8f9" }}>
+    <div className="app-sidebar off-canvas-sidebar" id="sidebar" style={{ background: "#f7f8f9" }}>
       <Brand />
-      <div className="docs-nav">
+      <div className="app-nav">
         <div className="accordion-container">
           <div className="accordion">
-            <input id="accordion-getting-started" type="checkbox" name="docs-accordion-checkbox" hidden />
+            <input id="accordion-getting-started" type="checkbox" name="app-accordion-checkbox" hidden />
             <label className="accordion-header c-hand" htmlFor="accordion-getting-started">
               Getting started
             </label>
@@ -29,7 +29,7 @@ export default () => (
             </div>
           </div>
           <div className="accordion">
-            <input id="accordion-elements" type="checkbox" name="docs-accordion-checkbox" hidden />
+            <input id="accordion-elements" type="checkbox" name="app-accordion-checkbox" hidden />
             <label className="accordion-header c-hand" htmlFor="accordion-elements">
               Elements
             </label>
@@ -63,7 +63,7 @@ export default () => (
             </div>
           </div>
           <div className="accordion">
-            <input id="accordion-layout" type="checkbox" name="docs-accordion-checkbox" hidden />
+            <input id="accordion-layout" type="checkbox" name="app-accordion-checkbox" hidden />
             <label className="accordion-header c-hand" htmlFor="accordion-layout">
               Layout
             </label>
@@ -85,7 +85,7 @@ export default () => (
             </div>
           </div>
           <div className="accordion">
-            <input id="accordion-components" type="checkbox" name="docs-accordion-checkbox" hidden defaultChecked="checked" />
+            <input id="accordion-components" type="checkbox" name="app-accordion-checkbox" hidden defaultChecked="checked" />
             <label className="accordion-header c-hand" htmlFor="accordion-components">
               Components
             </label>
@@ -152,7 +152,7 @@ export default () => (
             </div>
           </div>
           <div className="accordion">
-            <input id="accordion-utilities" type="checkbox" name="docs-accordion-checkbox" hidden />
+            <input id="accordion-utilities" type="checkbox" name="app-accordion-checkbox" hidden />
             <label className="accordion-header c-hand" htmlFor="accordion-utilities">
               Utilities
             </label>
@@ -186,7 +186,7 @@ export default () => (
             </div>
           </div>
           <div className="accordion">
-            <input id="accordion-experimentals" type="checkbox" name="docs-accordion-checkbox" hidden />
+            <input id="accordion-experimentals" type="checkbox" name="app-accordion-checkbox" hidden />
             <label className="accordion-header c-hand" htmlFor="accordion-experimentals">
               Experimentals
             </label>

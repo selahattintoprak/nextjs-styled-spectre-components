@@ -2,7 +2,7 @@ import bodyScss from "./body.scss";
 import { CardsStyles } from "../../ui-styles/styles";
 export default () => (
   <>
-    <div className="docs-ad">
+    <div className="app-ad">
       <div className="hide-md text-center">
         {/* <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
         <ins className="adsbygoogle mx-auto" style={{ display: "inline-block", width: "728px", height: "90px" }} data-ad-client="ca-pub-2225124559530218" data-ad-slot="9894180784"></ins>
@@ -16,7 +16,7 @@ export default () => (
       <strong>Spectre.css </strong>is a lightweight, responsive and modern CSS framework for faster and extensible development.
     </p>
     <p>Spectre provides basic styles for typography and elements, flexbox based responsive layout system, pure CSS components and utilities with best practice coding and consistent design language.</p>
-    <div className="docs-demo columns">
+    <div className="app-demo columns">
       <div className="column col-6 col-xs-12">
         <div className="card">
           <div className="card-header">
@@ -265,7 +265,7 @@ export default () => (
         </div>
       </div>
     </div>
-    <div className="docs-ad docs-ad-sidebar text-center">test{/* <script id="_carbonads_js" async="" type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CK7DTKQW&amp;placement=picturepan2githubio"></script> */}</div>
+    <div className="app-ad app-ad-sidebar text-center">test{/* <script id="_carbonads_js" async="" type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CK7DTKQW&amp;placement=picturepan2githubio"></script> */}</div>
     <CardsStyles/>
     <style jsx global>
       {bodyScss}

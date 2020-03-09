@@ -19,11 +19,11 @@
   }
 }
 
-.docs-container {
+.app-container {
   min-height: 100vh;
 }
 
-.docs-content {
+.app-content {
   flex: 1 1 auto;
   padding: 0 4rem;
   width: calc(100vw - 12rem);
@@ -78,12 +78,12 @@
       }
     }
 
-    & + .docs-note {
+    & + .app-note {
       margin-top: 0.4rem;
     }
   }
 
-  .docs-demo {
+  .app-demo {
     padding-bottom: 1rem;
     padding-top: 1rem;
 
@@ -98,7 +98,7 @@
     padding: $layout-spacing;
   }
 
-  .docs-block {
+  .app-block {
     border-radius: $border-radius;
     padding: $unit-2;
 
@@ -107,14 +107,14 @@
     }
   }
 
-  .docs-shape {
+  .app-shape {
     height: 4.8rem;
     line-height: 1.2rem;
     padding: 1.8rem 0;
     width: 4.8rem;
   }
 
-  .docs-dot {
+  .app-dot {
     border-radius: 50%;
     display: inline-block;
     height: 0.5rem;
@@ -122,14 +122,14 @@
     width: 0.5rem;
   }
 
-  .docs-table {
+  .app-table {
     th,
     td {
       padding: 0.75rem 0.25rem;
     }
   }
 
-  .docs-color {
+  .app-color {
     border-radius: $border-radius;
     margin: 0.25rem 0;
     padding: 5rem 0.5rem 0.5rem;
@@ -238,14 +238,14 @@
     }
   }
 
-  .docs-sidebar {
-    .docs-brand {
+  .app-sidebar {
+    .app-brand {
       margin: 0.85rem 1.5rem;
       padding: 0;
       position: static;
     }
 
-    .docs-nav {
+    .app-nav {
       margin-top: 1rem;
       position: static;
     }
@@ -255,13 +255,13 @@
     }
   }
 
-  .docs-navbar {
+  .app-navbar {
     backdrop-filter: blur(5px);
     background: rgba($bg-color, 0.65);
     left: 0;
   }
 
-  .docs-content {
+  .app-content {
     min-width: auto;
     padding: 0 1.5rem;
     width: 100%;
@@ -316,32 +316,32 @@
     }
   }
 
-  .docs-navbar {
+  .app-navbar {
     .btns {
       right: 0.9rem;
     }
   }
 
   .grid-hero {
-    .docs-brand {
+    .app-brand {
       left: 0.9rem;
     }
   }
 
-  .docs-sidebar {
-    .docs-brand {
+  .app-sidebar {
+    .app-brand {
       margin: 0.85rem 1rem;
     }
 
-    .docs-nav {
+    .app-nav {
       padding: 0.5rem 1rem;
     }
   }
 
-  .docs-content {
+  .app-content {
     padding: 0 0.5rem;
 
-    .docs-block {
+    .app-block {
       padding: $unit-2 $unit-h;
     }
   }

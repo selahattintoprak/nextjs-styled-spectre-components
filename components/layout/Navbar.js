@@ -3,12 +3,12 @@ import { FormsStyles } from "../../ui-styles/styles";
 
 export default () => (
   <>
-    <div className="docs-navbar">
+    <div className="app-navbar">
       <a className="off-canvas-toggle btn btn-link btn-action" href="#sidebar">
         <i className="icon icon-menu"></i>
       </a>
       <div className="btns d-flex">
-        <input className="docs-search form-input" type="text" placeholder="Search Docs" />
+        <input className="app-search form-input" type="text" placeholder="Search Docs" />
         <a className="btn ml-1" href="https://www.paypal.me/picturepan2" target="_blank">
           PayPal
         </a>

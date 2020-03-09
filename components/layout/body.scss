@@ -2,7 +2,7 @@
 @import "../../ui-styles/variables.scss";
 @import "node_modules/spectre.css/src/mixins";
 
-.docs-ad {
+.app-ad {
   background: $bg-color;
   border-radius: $border-radius;
   display: block;
@@ -36,7 +36,7 @@
 .section-hero {
   padding: 1rem 0.5rem;
 
-  .docs-brand {
+  .app-brand {
     position: absolute;
     top: 0.85rem;
 
@@ -124,8 +124,8 @@
 
 
 @media (min-width: 1366px) {
-    .docs-ad {
-      &.docs-ad-sidebar {
+    .app-ad {
+      &.app-ad-sidebar {
         bottom: 1rem;
         margin: 0;
         position: fixed;

@@ -1,7 +1,7 @@
 import footerScss from "./footer.scss";
 export default () => (
   <>
-    <div className="docs-footer container grid-lg" id="copyright">
+    <div className="app-footer container grid-lg" id="copyright">
       <p>
         <a href="https://github.com/picturepan2/spectre" target="_blank">
           GitHub
