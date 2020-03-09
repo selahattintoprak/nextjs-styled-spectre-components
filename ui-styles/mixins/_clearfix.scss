@@ -1,8 +1,2 @@
 // Clearfix mixin
-@mixin clearfix() {
-  &::after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-}
+@import "node_modules/spectre.css/src/mixins/clearfix.scss";

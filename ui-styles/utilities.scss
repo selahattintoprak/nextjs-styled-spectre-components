@@ -2,6 +2,9 @@
 @import "variables";
 @import "mixins.scss";
 
+// Utilities
+// @import "node_modules/spectre.css/src/utilities";
+
 @import "utilities/colors";
 @import "utilities/cursors";
 @import "utilities/display";
@@ -10,3 +13,4 @@
 @import "utilities/position";
 @import "utilities/shapes";
 @import "utilities/text";
+

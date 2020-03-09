@@ -1,4 +1,6 @@
 // Background color utility mixin
+// @import "node_modules/spectre.css/src/mixins/color.scss";
+
 @mixin bg-color-variant($name: ".bg-primary", $color: $primary-color) {
   #{$name} {
     background: $color; // !important;

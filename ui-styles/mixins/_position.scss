@@ -1,4 +1,6 @@
 // Margin utility mixin
+// @import "node_modules/spectre.css/src/mixins/position.scss";
+
 @mixin margin-variant($id: 1, $size: $unit-1) {
   .m-#{$id} {
     margin: $size; // !important;

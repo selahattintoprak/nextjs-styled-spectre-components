@@ -1,8 +1,2 @@
 // Shapes
-.s-rounded {
-  border-radius: $border-radius;
-}
-
-.s-circle {
-  border-radius: 50%;
-}
+@import "node_modules/spectre.css/src/utilities/shapes.scss";

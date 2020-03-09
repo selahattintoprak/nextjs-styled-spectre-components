@@ -2,6 +2,9 @@
 @import "variables";
 
 // Off canvas menus
+// @import "node_modules/spectre.css/src/off-canvas.scss";
+
+// Off canvas menus
 $off-canvas-breakpoint: $size-lg !default;
 
 .off-canvas {

@@ -1,4 +1,6 @@
 // Position
+// @import "node_modules/spectre.css/src/utilities/position.scss";
+
 .clearfix {
   @include clearfix();
 }
