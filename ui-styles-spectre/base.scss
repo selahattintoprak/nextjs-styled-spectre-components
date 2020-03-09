@@ -3,14 +3,8 @@
 
 // Variables and mixins
 @import "variables";
-@import "node_modules/spectre.css/src/mixins"; // Medium
+@import "node_modules/spectre.css/src/mixins/shadow"; // Medium
 
-/*! Spectre.css v#{$version} | MIT License | github.com/picturepan2/spectre */
-// Reset and dependencies
-@import "node_modules/spectre.css/src/normalize"; // Medium
-@import "node_modules/spectre.css/src/base"; // Small
+// Base
+@import "node_modules/spectre.css/src/base";
 
-// Utility classes
-@import "node_modules/spectre.css/src/animations"; //Small
-@import "node_modules/spectre.css/src/utilities"; //Samll
-//@import "node_modules/spectre.css/src/spectre.scss";
