@@ -89,7 +89,9 @@ const fonts = {
   base: '-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto',
   mono: '"SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace',
   fallBack: '"Helvetica Neue", sans-serif',
-  body: `${fontBase}, ${fontFallback}`
+  get body() {
+    return `${this.base}, ${this.fallBack}`;
+  }
 };
 // Unit sizes
 const units = {
@@ -123,18 +125,18 @@ const fontSizes = {
 };
 // Sizes
 const sizes = {
-  layoutSpacing: unit[2],
-  layoutSpacingSm: unit[1],
-  layoutSpacingLg: unit[4],
-  borderRadius: unit["h"],
-  borderWidth: unit["o"],
-  borderWidthLg: unit["h"],
-  controlSize: unit[9],
-  controlSizeSm: unit[7],
-  controlSizeLg: unit[10],
-  controlPaddingX: unit[2],
-  controlPaddingXSm: unit[2] * 0.75,
-  controlPaddingXLg: unit[2] * 1.5,
+  layoutSpacing: units[2],
+  layoutSpacingSm: units[1],
+  layoutSpacingLg: units[4],
+  borderRadius: units["h"],
+  borderWidth: units["o"],
+  borderWidthLg: units["h"],
+  controlSize: units[9],
+  controlSizeSm: units[7],
+  controlSizeLg: units[10],
+  controlPaddingX: units[2],
+  controlPaddingXSm: units[2] * 0.75,
+  controlPaddingXLg: units[2] * 1.5,
   get controlPaddingY() {
     return (this.controlSize - this.lineHeight) / 2 - this.borderWidth;
   },
