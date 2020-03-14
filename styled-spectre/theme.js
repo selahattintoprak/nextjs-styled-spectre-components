@@ -6,19 +6,19 @@ const rtl = false;
 const core = {
   primary: "#673ab7",
   get primaryDark() {
-    return darken(0.03, this.primary);
+    return darken(3/100, this.primary);
   },
   get primaryLight() {
-    return lighten(0.03, this.primary);
+    return lighten(3/100, this.primary);
   },
   get secondary() {
-    return lighten(37.5, this.primary);
+    return lighten(37.5/100, this.primary);
   },
   get secondaryDark() {
-    return darken(0.03, this.secondary);
+    return darken(3/100, this.secondary);
   },
   get secondaryLight() {
-    return lighten(0.03, this.secondary);
+    return lighten(3/100, this.secondary);
   }
 };
 // Gray colors
@@ -26,28 +26,28 @@ const gray = {
   dark: "#303742",
   light: "#fff",
   get gray() {
-    return lighten(0.55, this.dark);
+    return lighten(55/100, this.dark);
   },
   get grayDark() {
-    return darken(0.3, this.gray);
+    return darken(30/100, this.gray);
   },
   get grayLight() {
-    return lighten(0.2, this.gray);
+    return lighten(20/100, this.gray);
   },
   get border() {
-    return lighten(0.65, this.dark);
+    return lighten(65/100, this.dark);
   },
   get borderDark() {
-    return darken(0.1, this.border);
+    return darken(10/100, this.border);
   },
   get borderLight() {
-    return lighten(0.08, this.border);
+    return lighten(8/100, this.border);
   },
   get bg() {
-    return lighten(0.75, this.dark);
+    return lighten(75/100, this.dark);
   },
   get bgDark() {
-    return darken(0.03, this.bg);
+    return darken(3/100, this.bg);
   },
   get bgLight() {
     return this.light;
@@ -65,14 +65,14 @@ const other = {
   highlight: "#ffe9b3",
   bodyBg: `${gray.bgLight}`,
   get bodyFont() {
-    return lighten(0.05, gray.dark);
+    return lighten(5/100, gray.dark);
   },
   link: `${core.primary}`,
   get linkDark() {
-    return darken(0.1, this.link);
+    return darken(10/100, this.link);
   },
   get linkLight() {
-    return lighten(0.1, this.link);
+    return lighten(10/100, this.link);
   }
 };
 //  colors
