@@ -16,7 +16,7 @@ const Button = styled.button`
   height: ${({ theme }) => theme.sizes.controlSize};
   line-height: ${({ theme }) => theme.sizes.fonts.lineHeight};
   outline: none;
-  padding: ${({ theme }) => theme.sizes.controlPaddingY} ${({ theme }) => theme.sizes.controlPaddingY};
+  padding: ${({ theme }) => theme.sizes.controlPaddingY} ${({ theme }) => theme.sizes.controlPaddingX};
   text-align: center;
   text-decoration: none;
   transition: background 0.2s, border 0.2s, box-shadow 0.2s, color 0.2s;
@@ -35,7 +35,7 @@ const Button = styled.button`
   &:active,
   &.active {
     background: ${({ theme }) => theme.colors.primaryDark};
-    border-color: ${({ theme }) => darken(0.5, theme.colors.primaryDark)};
+    border-color: ${({ theme }) => darken(5/100, theme.colors.primaryDark)};
     color: ${({ theme }) => theme.colors.light};
     text-decoration: none;
     &.loading {
@@ -53,21 +53,21 @@ const Button = styled.button`
     pointer-events: none;
   }
 
-  // Button Primary
+  /* Button Primary */
   &.btn-primary {
     background: ${({ theme }) => theme.colors.primary};
     border-color: ${({ theme }) => theme.colors.primaryDark};
     color: ${({ theme }) => theme.colors.light};
     &:focus,
     &:hover {
-      background: ${({ theme }) => darken(0.2, theme.colors.primaryDark)};
-      border-color: ${({ theme }) => darken(0.5, theme.colors.primaryDark)};
+      background: ${({ theme }) => darken(2/100, theme.colors.primaryDark)};
+      border-color: ${({ theme }) => darken(5/100, theme.colors.primaryDark)};
       color: ${({ theme }) => theme.colors.light};
     }
     &:active,
     &.active {
-      background: ${({ theme }) => darken(0.4, theme.colors.primaryDark)};
-      border-color: ${({ theme }) => darken(0.7, theme.colors.primaryDark)};
+      background: ${({ theme }) => darken(4/100, theme.colors.primaryDark)};
+      border-color: ${({ theme }) => darken(7/100, theme.colors.primaryDark)};
       color: ${({ theme }) => theme.colors.light};
     }
     &.loading {
@@ -78,7 +78,7 @@ const Button = styled.button`
     }
   }
 
-  // Button Colors
+  /* Button Colors */
   &.btn-success {
     ${({ theme }) => buttonVariant(theme.colors.success)}
   }
@@ -88,6 +88,7 @@ const Button = styled.button`
   }
 
   // Button Link
+  /* Button Colors */
   &.btn-link {
     background: transparent;
     border-color: transparent;
@@ -100,7 +101,7 @@ const Button = styled.button`
     }
   }
 
-  // Button Sizes
+  /* Button Sizes */
   &.btn-sm {
     font-size: ${({ theme }) => theme.sizes.fonts.fontSm};
     height: ${({ theme }) => theme.sizes.controlSizeSm};
@@ -113,13 +114,13 @@ const Button = styled.button`
     padding: ${({ theme }) => theme.sizes.controlPaddingYLg} ${({ theme }) => theme.sizes.controlPaddingXLg};
   }
 
-  // Button Block
+  /* Button Block */
   &.btn-block {
     display: block;
     width: 100%;
   }
 
-  // Button Action
+  /* Button Action */
   &.btn-action {
     width: ${({ theme }) => theme.sizes.controlSize};
     padding-left: 0;
@@ -134,7 +135,7 @@ const Button = styled.button`
     }
   }
 
-  // Button Clear
+  /* Button Clear */
   &.btn-clear {
     background: transparent;
     border: 0;
