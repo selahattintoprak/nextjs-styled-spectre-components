@@ -138,13 +138,13 @@ const sizes = {
   controlPaddingXSm: units[2] * 0.75,
   controlPaddingXLg: units[2] * 1.5,
   get controlPaddingY() {
-    return (this.controlSize - this.lineHeight) / 2 - this.borderWidth;
+    return (this.controlSize - fontSizes.lineHeight.slice(0, -3)) / 2 - this.borderWidth;
   },
   get controlPaddingYSm() {
-    return (this.controlSizeSm - this.lineHeight) / 2 - this.borderWidth;
+    return (this.controlSizeSm - fontSizes.lineHeight.slice(0, -3)) / 2 - this.borderWidth;
   },
   get controlPaddingYLg() {
-    return (this.controlSizelg - this.lineHeight) / 2 - this.borderWidth;
+    return (this.controlSizelg - fontSizes.lineHeight.slice(0, -3)) / 2 - this.borderWidth;
   }
 };
 const sizesRem = {};
