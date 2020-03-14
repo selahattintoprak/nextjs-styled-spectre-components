@@ -10,8 +10,12 @@ export default () => (
   <>
     Hello World!
     <Button></Button>
-    <Button2>tests</Button2>
-    <Button2>tests</Button2>
+    <div style={{ margin: "10px" }}>
+      <Button2>tests</Button2>
+    </div>
+    <div style={{ margin: "10px" }}>
+      <Button2>tests</Button2>
+    </div>
     <Title>My page</Title>
   </>
 );

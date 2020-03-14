@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import theme2 from "./theme";
+import { darken, rgba } from "polished";
+import { buttonVariant } from "./mixins/button";
+import { controlShadow } from "./mixins/shadow";
 
 const Button = styled.button`
   appearance: none;
@@ -13,7 +16,7 @@ const Button = styled.button`
   height: ${({ theme }) => theme.sizes.controlSize};
   line-height: ${({ theme }) => theme.sizes.fonts.lineHeight};
   outline: none;
-  padding: $control-padding-y $control-padding-x;
+  padding: ${({ theme }) => theme.sizes.controlPaddingY} ${({ theme }) => theme.sizes.controlPaddingY};
   text-align: center;
   text-decoration: none;
   transition: background 0.2s, border 0.2s, box-shadow 0.2s, color 0.2s;
@@ -21,24 +24,24 @@ const Button = styled.button`
   vertical-align: middle;
   white-space: nowrap;
   &:focus {
-    @include control-shadow();
+    ${controlShadow()}
   }
   &:focus,
   &:hover {
-    background: $secondary-color;
-    border-color: $primary-color-dark;
+    background: ${({ theme }) => theme.colors.secondary};
+    border-color: ${({ theme }) => theme.colors.primaryDark};
     text-decoration: none;
   }
   &:active,
   &.active {
-    background: $primary-color-dark;
-    border-color: darken($primary-color-dark, 5%);
-    color: $light-color;
+    background: ${({ theme }) => theme.colors.primaryDark};
+    border-color: ${({ theme }) => darken(0.5, theme.colors.primaryDark)};
+    color: ${({ theme }) => theme.colors.light};
     text-decoration: none;
     &.loading {
       &::after {
-        border-bottom-color: $light-color;
-        border-left-color: $light-color;
+        border-bottom-color: ${({ theme }) => theme.colors.light};
+        border-left-color: ${({ theme }) => theme.colors.light};
       }
     }
   }
@@ -52,62 +55,62 @@ const Button = styled.button`
 
   // Button Primary
   &.btn-primary {
-    background: $primary-color;
-    border-color: $primary-color-dark;
-    color: $light-color;
+    background: ${({ theme }) => theme.colors.primary};
+    border-color: ${({ theme }) => theme.colors.primaryDark};
+    color: ${({ theme }) => theme.colors.light};
     &:focus,
     &:hover {
-      background: darken($primary-color-dark, 2%);
-      border-color: darken($primary-color-dark, 5%);
-      color: $light-color;
+      background: ${({ theme }) => darken(0.2, theme.colors.primaryDark)};
+      border-color: ${({ theme }) => darken(0.5, theme.colors.primaryDark)};
+      color: ${({ theme }) => theme.colors.light};
     }
     &:active,
     &.active {
-      background: darken($primary-color-dark, 4%);
-      border-color: darken($primary-color-dark, 7%);
-      color: $light-color;
+      background: ${({ theme }) => darken(0.4, theme.colors.primaryDark)};
+      border-color: ${({ theme }) => darken(0.7, theme.colors.primaryDark)};
+      color: ${({ theme }) => theme.colors.light};
     }
     &.loading {
       &::after {
-        border-bottom-color: $light-color;
-        border-left-color: $light-color;
+        border-bottom-color: ${({ theme }) => theme.colors.light};
+        border-left-color: ${({ theme }) => theme.colors.light};
       }
     }
   }
 
   // Button Colors
   &.btn-success {
-    @include button-variant($success-color);
+    ${({ theme }) => buttonVariant(theme.colors.success)}
   }
 
   &.btn-error {
-    @include button-variant($error-color);
+    ${({ theme }) => buttonVariant(theme.colors.error)};
   }
 
   // Button Link
   &.btn-link {
     background: transparent;
     border-color: transparent;
-    color: $link-color;
+    color: ${({ theme }) => theme.colors.link};
     &:focus,
     &:hover,
     &:active,
     &.active {
-      color: $link-color-dark;
+      color: ${({ theme }) => theme.colors.linkDark};
     }
   }
 
   // Button Sizes
   &.btn-sm {
-    font-size: $font-size-sm;
-    height: $control-size-sm;
-    padding: $control-padding-y-sm $control-padding-x-sm;
+    font-size: ${({ theme }) => theme.sizes.fonts.fontSm};
+    height: ${({ theme }) => theme.sizes.controlSizeSm};
+    padding: ${({ theme }) => theme.sizes.controlPaddingYSm} ${({ theme }) => theme.sizes.controlPaddingXSm};
   }
 
   &.btn-lg {
-    font-size: $font-size-lg;
-    height: $control-size-lg;
-    padding: $control-padding-y-lg $control-padding-x-lg;
+    font-size: ${({ theme }) => theme.sizes.fonts.fontLg};
+    height: ${({ theme }) => theme.sizes.controlSizeLg};
+    padding: ${({ theme }) => theme.sizes.controlPaddingYLg} ${({ theme }) => theme.sizes.controlPaddingXLg};
   }
 
   // Button Block
@@ -118,16 +121,16 @@ const Button = styled.button`
 
   // Button Action
   &.btn-action {
-    width: $control-size;
+    width: ${({ theme }) => theme.sizes.controlSize};
     padding-left: 0;
     padding-right: 0;
 
     &.btn-sm {
-      width: $control-size-sm;
+      width: ${({ theme }) => theme.sizes.controlSizeSm};
     }
 
     &.btn-lg {
-      width: $control-size-lg;
+      width: ${({ theme }) => theme.sizes.controlSizeLg};
     }
   }
 
@@ -136,18 +139,18 @@ const Button = styled.button`
     background: transparent;
     border: 0;
     color: currentColor;
-    height: $unit-5;
-    line-height: $unit-4;
-    margin-left: $unit-1;
+    height: ${({ theme }) => theme.sizes.units[5]};
+    line-height: ${({ theme }) => theme.sizes.units[4]};
+    margin-left: ${({ theme }) => theme.sizes.units[1]};
     margin-right: -2px;
     opacity: 1;
-    padding: $unit-h;
+    padding: ${({ theme }) => theme.sizes.units["h"]};
     text-decoration: none;
-    width: $unit-5;
+    width: ${({ theme }) => theme.sizes.units[5]};
 
     &:focus,
     &:hover {
-      background: rgba($bg-color, 0.5);
+      background: ${({ theme }) => rgba(theme.colors.bg, 0.5)};
       opacity: 0.95;
     }
 
