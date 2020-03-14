@@ -2,6 +2,7 @@ import Button from "../ui-components/button";
 export const config = { amp: "hybrid" };
 import styled from "styled-components";
 import Button2 from "../styled-spectre/Button";
+import {IconsStyles, UtilitiesStyles} from '../ui-styles/styles'
 const Title = styled.h1`
   font-size: 50px;
   color: ${({ theme }) => theme.colors.primaryDark};
@@ -15,6 +16,10 @@ export default () => (
     </div>
     <div style={{ margin: "10px" }}>
       <Button2>tests</Button2>
+    </div>
+    <div style={{ margin: "10px" }}>
+    <Button2 className="btn btn-clear">button clear</Button2>
+
     </div>
     <Title>My page</Title>
     <div>
@@ -38,7 +43,7 @@ export default () => (
       <i className="icon icon-arrow-left"></i> small
     </Button2>
     <Button2 className="btn btn-action">
-      <i className="icon icon-arrow-left"></i>
+      <i className="icon icon-arrow-right"></i>
     </Button2>
     <Button2 className="btn btn-action s-circle">
       <i className="icon icon-arrow-left"></i>
@@ -56,6 +61,8 @@ export default () => (
       <Button2 className="btn">second button</Button2>
       <Button2 className="btn">third button</Button2>
     </div>
+    <IconsStyles/>
+    <UtilitiesStyles/>
   </div>
   </>
 );

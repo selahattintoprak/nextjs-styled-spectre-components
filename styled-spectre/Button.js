@@ -87,8 +87,7 @@ const Button = styled.button`
     ${({ theme }) => buttonVariant(theme.colors.error)};
   }
 
-  // Button Link
-  /* Button Colors */
+  /* Button Link */
   &.btn-link {
     background: transparent;
     border-color: transparent;
