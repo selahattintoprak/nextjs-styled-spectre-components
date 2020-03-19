@@ -1,13 +1,14 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import theme2 from "./theme";
 import { darken, rgba } from "polished";
 import { buttonVariant } from "./mixins/button";
 import { controlShadow } from "./mixins/shadow";
 
-const Button = styled.button`
+const baseButton = css`
   appearance: none;
   background: ${({ theme }) => theme.colors.light};
-  border: ${({ theme }) => theme.sizes.borderWidth} solid ${({ theme }) => theme.colors.primary};
+  border: ${({ theme }) => theme.sizes.borderWidth} solid
+    ${({ theme }) => theme.colors.primary};
   border-radius: ${({ theme }) => theme.sizes.borderRadius};
   color: ${({ theme }) => theme.colors.primary};
   cursor: pointer;
@@ -16,7 +17,8 @@ const Button = styled.button`
   height: ${({ theme }) => theme.sizes.controlSize};
   line-height: ${({ theme }) => theme.sizes.fonts.lineHeight};
   outline: none;
-  padding: ${({ theme }) => theme.sizes.controlPaddingY} ${({ theme }) => theme.sizes.controlPaddingX};
+  padding: ${({ theme }) => theme.sizes.controlPaddingY};
+  ${({ theme }) => theme.sizes.controlPaddingX};
   text-align: center;
   text-decoration: none;
   transition: background 0.2s, border 0.2s, box-shadow 0.2s, color 0.2s;
@@ -35,7 +37,7 @@ const Button = styled.button`
   &:active,
   &.active {
     background: ${({ theme }) => theme.colors.primaryDark};
-    border-color: ${({ theme }) => darken(5/100, theme.colors.primaryDark)};
+    border-color: ${({ theme }) => darken(5 / 100, theme.colors.primaryDark)};
     color: ${({ theme }) => theme.colors.light};
     text-decoration: none;
     &.loading {
@@ -52,22 +54,22 @@ const Button = styled.button`
     opacity: 0.5;
     pointer-events: none;
   }
-
-  /* Button Primary */
+`;
+const primaryButton = css`
   &.btn-primary {
     background: ${({ theme }) => theme.colors.primary};
     border-color: ${({ theme }) => theme.colors.primaryDark};
     color: ${({ theme }) => theme.colors.light};
     &:focus,
     &:hover {
-      background: ${({ theme }) => darken(2/100, theme.colors.primaryDark)};
-      border-color: ${({ theme }) => darken(5/100, theme.colors.primaryDark)};
+      background: ${({ theme }) => darken(2 / 100, theme.colors.primaryDark)};
+      border-color: ${({ theme }) => darken(5 / 100, theme.colors.primaryDark)};
       color: ${({ theme }) => theme.colors.light};
     }
     &:active,
     &.active {
-      background: ${({ theme }) => darken(4/100, theme.colors.primaryDark)};
-      border-color: ${({ theme }) => darken(7/100, theme.colors.primaryDark)};
+      background: ${({ theme }) => darken(4 / 100, theme.colors.primaryDark)};
+      border-color: ${({ theme }) => darken(7 / 100, theme.colors.primaryDark)};
       color: ${({ theme }) => theme.colors.light};
     }
     &.loading {
@@ -77,6 +79,13 @@ const Button = styled.button`
       }
     }
   }
+`;
+const Button = styled.button`
+  /* Button Primary */
+  ${baseButton}
+
+  /* Button Primary */
+  ${({ primary }) => primary && primaryButton}
 
   /* Button Colors */
   &.btn-success {
@@ -104,13 +113,15 @@ const Button = styled.button`
   &.btn-sm {
     font-size: ${({ theme }) => theme.sizes.fonts.fontSm};
     height: ${({ theme }) => theme.sizes.controlSizeSm};
-    padding: ${({ theme }) => theme.sizes.controlPaddingYSm} ${({ theme }) => theme.sizes.controlPaddingXSm};
+    padding: ${({ theme }) => theme.sizes.controlPaddingYSm};
+      ${({ theme }) => theme.sizes.controlPaddingXSm};
   }
 
   &.btn-lg {
     font-size: ${({ theme }) => theme.sizes.fonts.fontLg};
     height: ${({ theme }) => theme.sizes.controlSizeLg};
-    padding: ${({ theme }) => theme.sizes.controlPaddingYLg} ${({ theme }) => theme.sizes.controlPaddingXLg};
+    padding: ${({ theme }) => theme.sizes.controlPaddingYLg};
+      ${({ theme }) => theme.sizes.controlPaddingXLg};
   }
 
   /* Button Block */
