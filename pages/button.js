@@ -1,4 +1,4 @@
-import Button from "../styled-spectre/Button";
+import Button, { ButtonGroup } from "../styled-spectre/Button";
 import { IconsStyles, UtilitiesStyles } from "../ui-styles/styles";
 
 export const config = { amp: "hybrid" };
@@ -45,11 +45,11 @@ export default () => (
     <Button primary className="loading" loading>
       primary button
     </Button>
-    <div group groupBlock>
+    <ButtonGroup block>
       <Button>first button</Button>
       <Button>second button</Button>
       <Button>third button</Button>
-    </div>
+    </ButtonGroup>
     <IconsStyles />
     <UtilitiesStyles />
   </>

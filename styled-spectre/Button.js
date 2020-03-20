@@ -188,4 +188,42 @@ const Button = styled.button`
 
 `;
 
+export const ButtonGroup = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  button {
+    flex: 1 0 auto;
+    &:first-child:not(:last-child) {
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+      margin-left: -$border-width;
+    }
+    &:last-child:not(:first-child) {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      margin-left: -$border-width;
+    }
+    &:focus,
+    &:hover,
+    &:active,
+    &.active {
+      z-index: $zindex-0;
+    }
+  }
+
+  ${({ block }) =>
+    block &&
+    css`
+      display: flex;
+
+      button {
+        flex: 1 0 0;
+      }
+    `}
+`;
+
 export default Button;
