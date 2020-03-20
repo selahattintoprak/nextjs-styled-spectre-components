@@ -4,7 +4,7 @@ import { darken, rgba } from "polished";
 import { buttonVariant } from "./mixins/button";
 import { controlShadow } from "./mixins/shadow";
 
-const baseButton = css`
+const buttonBase = css`
   appearance: none;
   background: ${({ theme }) => theme.colors.light};
   border: ${({ theme }) => theme.sizes.borderWidth} solid
@@ -40,12 +40,14 @@ const baseButton = css`
     border-color: ${({ theme }) => darken(5 / 100, theme.colors.primaryDark)};
     color: ${({ theme }) => theme.colors.light};
     text-decoration: none;
-    &.loading {
-      &::after {
-        border-bottom-color: ${({ theme }) => theme.colors.light};
-        border-left-color: ${({ theme }) => theme.colors.light};
-      }
-    }
+    ${({ loading }) =>
+      loading &&
+      css`
+        &::after {
+          border-bottom-color: ${({ theme }) => theme.colors.light};
+          border-left-color: ${({ theme }) => theme.colors.light};
+        }
+      `}
   }
   &[disabled],
   &:disabled,
@@ -55,121 +57,135 @@ const baseButton = css`
     pointer-events: none;
   }
 `;
-const primaryButton = css`
-  &.btn-primary {
-    background: ${({ theme }) => theme.colors.primary};
-    border-color: ${({ theme }) => theme.colors.primaryDark};
+const buttonPrimary = css`
+  background: ${({ theme }) => theme.colors.primary};
+  border-color: ${({ theme }) => theme.colors.primaryDark};
+  color: ${({ theme }) => theme.colors.light};
+  &:focus,
+  &:hover {
+    background: ${({ theme }) => darken(2 / 100, theme.colors.primaryDark)};
+    border-color: ${({ theme }) => darken(5 / 100, theme.colors.primaryDark)};
     color: ${({ theme }) => theme.colors.light};
-    &:focus,
-    &:hover {
-      background: ${({ theme }) => darken(2 / 100, theme.colors.primaryDark)};
-      border-color: ${({ theme }) => darken(5 / 100, theme.colors.primaryDark)};
-      color: ${({ theme }) => theme.colors.light};
-    }
-    &:active,
-    &.active {
-      background: ${({ theme }) => darken(4 / 100, theme.colors.primaryDark)};
-      border-color: ${({ theme }) => darken(7 / 100, theme.colors.primaryDark)};
-      color: ${({ theme }) => theme.colors.light};
-    }
-    &.loading {
+  }
+  &:active,
+  &.active {
+    background: ${({ theme }) => darken(4 / 100, theme.colors.primaryDark)};
+    border-color: ${({ theme }) => darken(7 / 100, theme.colors.primaryDark)};
+    color: ${({ theme }) => theme.colors.light};
+  }
+  ${({ loading }) =>
+    loading &&
+    css`
       &::after {
         border-bottom-color: ${({ theme }) => theme.colors.light};
         border-left-color: ${({ theme }) => theme.colors.light};
       }
-    }
+    `}
+`;
+const buttonSuccess = css`
+  ${({ theme }) => buttonVariant(theme.colors.success)}
+`;
+const buttonError = css`
+  ${({ theme }) => buttonVariant(theme.colors.error)};
+`;
+const buttonLink = css`
+  background: transparent;
+  border-color: transparent;
+  color: ${({ theme }) => theme.colors.link};
+  &:focus,
+  &:hover,
+  &:active,
+  &.active {
+    color: ${({ theme }) => theme.colors.linkDark};
+  }
+`;
+const buttonSm = css`
+  font-size: ${({ theme }) => theme.sizes.fonts.fontSm};
+  height: ${({ theme }) => theme.sizes.controlSizeSm};
+  padding: ${({ theme }) => theme.sizes.controlPaddingYSm};
+  ${({ theme }) => theme.sizes.controlPaddingXSm};
+`;
+const buttonLg = css`
+  font-size: ${({ theme }) => theme.sizes.fonts.fontLg};
+  height: ${({ theme }) => theme.sizes.controlSizeLg};
+  padding: ${({ theme }) => theme.sizes.controlPaddingYLg};
+  ${({ theme }) => theme.sizes.controlPaddingXLg};
+`;
+const buttonBlock = css`
+  display: block;
+  width: 100%;
+`;
+const buttonAction = css`
+  width: ${({ theme }) => theme.sizes.controlSize};
+  padding-left: 0;
+  padding-right: 0;
+
+  /* Size Small */
+  ${({ sm }) =>
+    sm &&
+    css`
+      width: ${({ theme }) => theme.sizes.controlSizeSm};
+    `}
+
+  /* Size Large */
+  ${({ lg }) =>
+    lg &&
+    css`
+      width: ${({ theme }) => theme.sizes.controlSizeLg};
+    `}
+`;
+const buttonClear = css`
+  background: transparent;
+  border: 0;
+  color: currentColor;
+  height: ${({ theme }) => theme.sizes.units[5]};
+  line-height: ${({ theme }) => theme.sizes.units[4]};
+  margin-left: ${({ theme }) => theme.sizes.units[1]};
+  margin-right: -2px;
+  opacity: 1;
+  padding: ${({ theme }) => theme.sizes.units["h"]};
+  text-decoration: none;
+  width: ${({ theme }) => theme.sizes.units[5]};
+
+  &:focus,
+  &:hover {
+    background: ${({ theme }) => rgba(theme.colors.bg, 0.5)};
+    opacity: 0.95;
+  }
+
+  &::before {
+    content: "\2715";
   }
 `;
 const Button = styled.button`
   /* Button Primary */
-  ${baseButton}
+  ${buttonBase}
 
   /* Button Primary */
-  ${({ primary }) => primary && primaryButton}
+  ${({ primary }) => primary && buttonPrimary}
 
-  /* Button Colors */
-  &.btn-success {
-    ${({ theme }) => buttonVariant(theme.colors.success)}
-  }
+  /* Button Success */
+  ${({ success }) => success && buttonSuccess}
 
-  &.btn-error {
-    ${({ theme }) => buttonVariant(theme.colors.error)};
-  }
+  /* Button Error */
+  ${({ error }) => error && buttonError}
 
   /* Button Link */
-  &.btn-link {
-    background: transparent;
-    border-color: transparent;
-    color: ${({ theme }) => theme.colors.link};
-    &:focus,
-    &:hover,
-    &:active,
-    &.active {
-      color: ${({ theme }) => theme.colors.linkDark};
-    }
-  }
+  ${({ link }) => link && buttonLink}
 
   /* Button Sizes */
-  &.btn-sm {
-    font-size: ${({ theme }) => theme.sizes.fonts.fontSm};
-    height: ${({ theme }) => theme.sizes.controlSizeSm};
-    padding: ${({ theme }) => theme.sizes.controlPaddingYSm};
-      ${({ theme }) => theme.sizes.controlPaddingXSm};
-  }
-
-  &.btn-lg {
-    font-size: ${({ theme }) => theme.sizes.fonts.fontLg};
-    height: ${({ theme }) => theme.sizes.controlSizeLg};
-    padding: ${({ theme }) => theme.sizes.controlPaddingYLg};
-      ${({ theme }) => theme.sizes.controlPaddingXLg};
-  }
+  ${({ sm }) => sm && buttonSm}
+  ${({ lg }) => lg && buttonLg}
 
   /* Button Block */
-  &.btn-block {
-    display: block;
-    width: 100%;
-  }
+  ${({ block }) => block && buttonBlock}
 
   /* Button Action */
-  &.btn-action {
-    width: ${({ theme }) => theme.sizes.controlSize};
-    padding-left: 0;
-    padding-right: 0;
-
-    &.btn-sm {
-      width: ${({ theme }) => theme.sizes.controlSizeSm};
-    }
-
-    &.btn-lg {
-      width: ${({ theme }) => theme.sizes.controlSizeLg};
-    }
-  }
+  ${({ action }) => action && buttonAction}
 
   /* Button Clear */
-  &.btn-clear {
-    background: transparent;
-    border: 0;
-    color: currentColor;
-    height: ${({ theme }) => theme.sizes.units[5]};
-    line-height: ${({ theme }) => theme.sizes.units[4]};
-    margin-left: ${({ theme }) => theme.sizes.units[1]};
-    margin-right: -2px;
-    opacity: 1;
-    padding: ${({ theme }) => theme.sizes.units["h"]};
-    text-decoration: none;
-    width: ${({ theme }) => theme.sizes.units[5]};
+  ${({ clear }) => clear && buttonClear}
 
-    &:focus,
-    &:hover {
-      background: ${({ theme }) => rgba(theme.colors.bg, 0.5)};
-      opacity: 0.95;
-    }
-
-    &::before {
-      content: "\2715";
-    }
-  }
 `;
-console.log(Button);
 
 export default Button;
