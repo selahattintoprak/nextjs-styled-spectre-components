@@ -2,6 +2,9 @@ import { ButtonsStyles } from "../ui-styles/styles";
 export const config = { amp: "hybrid" };
 export default () => (
   <div>
+    <div>
+    <button className="btn btn-clear">clear button</button>
+    </div>
     <button className="btn">default button</button>
     <button className="btn btn-primary">primary button</button>
     <button className="btn btn-link">link button</button>

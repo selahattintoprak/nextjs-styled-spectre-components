@@ -4,21 +4,19 @@ import { darken, rgba } from "polished";
 import { buttonVariant } from "./mixins/button";
 import { controlShadow } from "./mixins/shadow";
 
-const buttonBase = css`
+const buttonBase = ({ theme, withLoading }) => css`
   appearance: none;
-  background: ${({ theme }) => theme.colors.light};
-  border: ${({ theme }) => theme.sizes.borderWidth} solid
-    ${({ theme }) => theme.colors.primary};
-  border-radius: ${({ theme }) => theme.sizes.borderRadius};
-  color: ${({ theme }) => theme.colors.primary};
+  background: ${theme.colors.light};
+  border: ${theme.sizes.borderWidth} solid ${theme.colors.primary};
+  border-radius: ${theme.sizes.borderRadius};
+  color: ${theme.colors.primary};
   cursor: pointer;
   display: inline-block;
-  font-size: ${({ theme }) => theme.sizes.fonts.font};
-  height: ${({ theme }) => theme.sizes.controlSize};
-  line-height: ${({ theme }) => theme.sizes.fonts.lineHeight};
+  font-size: ${theme.sizes.fonts.font};
+  height: ${theme.sizes.controlSize};
+  line-height: ${theme.sizes.fonts.lineHeight};
   outline: none;
-  padding: ${({ theme }) => theme.sizes.controlPaddingY};
-  ${({ theme }) => theme.sizes.controlPaddingX};
+  padding: ${theme.sizes.controlPaddingY} ${theme.sizes.controlPaddingX};
   text-align: center;
   text-decoration: none;
   transition: background 0.2s, border 0.2s, box-shadow 0.2s, color 0.2s;
@@ -30,22 +28,22 @@ const buttonBase = css`
   }
   &:focus,
   &:hover {
-    background: ${({ theme }) => theme.colors.secondary};
-    border-color: ${({ theme }) => theme.colors.primaryDark};
+    background: ${theme.colors.secondary};
+    border-color: ${theme.colors.primaryDark};
     text-decoration: none;
   }
   &:active,
   &.active {
-    background: ${({ theme }) => theme.colors.primaryDark};
-    border-color: ${({ theme }) => darken(5 / 100, theme.colors.primaryDark)};
-    color: ${({ theme }) => theme.colors.light};
+    background: ${theme.colors.primaryDark};
+    border-color: ${darken(5 / 100, theme.colors.primaryDark)};
+    color: ${theme.colors.light};
     text-decoration: none;
-    ${({ loading }) =>
-      loading &&
+    ${withLoading &&
       css`
         &::after {
-          border-bottom-color: ${({ theme }) => theme.colors.light};
-          border-left-color: ${({ theme }) => theme.colors.light};
+          border-bottom-color: ${theme.colors.light};
+          border-width: 10px !important;
+          border-left-color: ${theme.colors.light};
         }
       `}
   }
@@ -57,99 +55,96 @@ const buttonBase = css`
     pointer-events: none;
   }
 `;
-const buttonPrimary = css`
-  background: ${({ theme }) => theme.colors.primary};
-  border-color: ${({ theme }) => theme.colors.primaryDark};
-  color: ${({ theme }) => theme.colors.light};
+const buttonPrimary = ({ theme, withLoading }) => css`
+  background: ${theme.colors.primary};
+  border-color: ${theme.colors.primaryDark};
+  color: ${theme.colors.light};
   &:focus,
   &:hover {
-    background: ${({ theme }) => darken(2 / 100, theme.colors.primaryDark)};
-    border-color: ${({ theme }) => darken(5 / 100, theme.colors.primaryDark)};
-    color: ${({ theme }) => theme.colors.light};
+    background: ${darken(2 / 100, theme.colors.primaryDark)};
+    border-color: ${darken(5 / 100, theme.colors.primaryDark)};
+    color: ${theme.colors.light};
   }
   &:active,
   &.active {
-    background: ${({ theme }) => darken(4 / 100, theme.colors.primaryDark)};
-    border-color: ${({ theme }) => darken(7 / 100, theme.colors.primaryDark)};
-    color: ${({ theme }) => theme.colors.light};
+    background: ${darken(4 / 100, theme.colors.primaryDark)};
+    border-color: ${darken(7 / 100, theme.colors.primaryDark)};
+    color: ${theme.colors.light};
   }
-  ${({ loading }) =>
-    loading &&
+  ${withLoading &&
     css`
       &::after {
-        border-bottom-color: ${({ theme }) => theme.colors.light};
-        border-left-color: ${({ theme }) => theme.colors.light};
+        border-bottom-color: ${theme.colors.light};
+        border-left-color: ${theme.colors.light};
       }
     `}
 `;
-const buttonSuccess = css`
-  ${({ theme }) => buttonVariant(theme.colors.success)}
+const buttonSuccess = ({ theme }) => css`
+  ${buttonVariant(theme.colors.success)}
 `;
-const buttonError = css`
-  ${({ theme }) => buttonVariant(theme.colors.error)};
+const buttonError = ({ theme }) => css`
+  ${buttonVariant(theme.colors.error)};
 `;
-const buttonLink = css`
+const buttonLink = ({ theme }) => css`
   background: transparent;
   border-color: transparent;
-  color: ${({ theme }) => theme.colors.link};
+  color: ${theme.colors.link};
   &:focus,
   &:hover,
   &:active,
   &.active {
-    color: ${({ theme }) => theme.colors.linkDark};
+    background: transparent;
+    border-color: transparent;
+    color: ${theme.colors.linkDark};
   }
 `;
-const buttonSm = css`
-  font-size: ${({ theme }) => theme.sizes.fonts.fontSm};
-  height: ${({ theme }) => theme.sizes.controlSizeSm};
-  padding: ${({ theme }) => theme.sizes.controlPaddingYSm};
-  ${({ theme }) => theme.sizes.controlPaddingXSm};
+const buttonSm = ({ theme }) => css`
+  font-size: ${theme.sizes.fonts.fontSm};
+  height: ${theme.sizes.controlSizeSm};
+  padding: ${theme.sizes.controlPaddingYSm} ${theme.sizes.controlPaddingXSm};
 `;
-const buttonLg = css`
-  font-size: ${({ theme }) => theme.sizes.fonts.fontLg};
-  height: ${({ theme }) => theme.sizes.controlSizeLg};
-  padding: ${({ theme }) => theme.sizes.controlPaddingYLg};
-  ${({ theme }) => theme.sizes.controlPaddingXLg};
+const buttonLg = ({ theme }) => css`
+  font-size: ${theme.sizes.fonts.fontLg};
+  height: ${theme.sizes.controlSizeLg};
+  padding: ${theme.sizes.controlPaddingYLg} ${theme.sizes.controlPaddingXLg};
 `;
 const buttonBlock = css`
   display: block;
   width: 100%;
 `;
-const buttonAction = css`
-  width: ${({ theme }) => theme.sizes.controlSize};
+const buttonIcon = ({ theme, sm, lg }) => css`
+  width: ${theme.sizes.controlSize};
   padding-left: 0;
   padding-right: 0;
 
   /* Size Small */
-  ${({ sm }) =>
-    sm &&
+  ${sm &&
     css`
-      width: ${({ theme }) => theme.sizes.controlSizeSm};
+      width: ${theme.sizes.controlSizeSm};
     `}
 
   /* Size Large */
-  ${({ lg }) =>
-    lg &&
+  ${lg &&
     css`
-      width: ${({ theme }) => theme.sizes.controlSizeLg};
+      width: ${theme.sizes.controlSizeLg};
     `}
 `;
-const buttonClear = css`
+const buttonClear = ({ theme }) => css`
   background: transparent;
   border: 0;
   color: currentColor;
-  height: ${({ theme }) => theme.sizes.units[5]};
-  line-height: ${({ theme }) => theme.sizes.units[4]};
-  margin-left: ${({ theme }) => theme.sizes.units[1]};
+  height: ${theme.sizes.units[5]};
+  line-height: ${theme.sizes.units[4]};
+  margin-left: ${theme.sizes.units[1]};
   margin-right: -2px;
   opacity: 1;
-  padding: ${({ theme }) => theme.sizes.units["h"]};
+  padding: ${theme.sizes.units["h"]};
   text-decoration: none;
-  width: ${({ theme }) => theme.sizes.units[5]};
+  width: ${theme.sizes.units[5]};
 
   &:focus,
   &:hover {
-    background: ${({ theme }) => rgba(theme.colors.bg, 0.5)};
+    background: ${rgba(theme.colors.bg, 0.5)};
     opacity: 0.95;
   }
 
@@ -158,34 +153,46 @@ const buttonClear = css`
   }
 `;
 const Button = styled.button`
-  /* Button Primary */
-  ${buttonBase}
+  ${({
+    primary,
+    success,
+    error,
+    link,
+    sm,
+    lg,
+    block,
+    icon,
+    clear,
+    ...rest
+  }) => css`
+  /* Button Base */
+  ${buttonBase(rest)}
 
   /* Button Primary */
-  ${({ primary }) => primary && buttonPrimary}
+  ${primary && buttonPrimary(rest)}
 
   /* Button Success */
-  ${({ success }) => success && buttonSuccess}
-
+   ${success && buttonSuccess(rest)}
+   
   /* Button Error */
-  ${({ error }) => error && buttonError}
+  ${error && buttonError(rest)}
 
   /* Button Link */
-  ${({ link }) => link && buttonLink}
+  ${link && buttonLink(rest)}
 
   /* Button Sizes */
-  ${({ sm }) => sm && buttonSm}
-  ${({ lg }) => lg && buttonLg}
+  ${sm && buttonSm(rest)}
+  ${lg && buttonLg(rest)}
 
   /* Button Block */
-  ${({ block }) => block && buttonBlock}
+  ${block && buttonBlock}
 
-  /* Button Action */
-  ${({ action }) => action && buttonAction}
+  /* Button Icon */
+  ${icon && buttonIcon({ sm, lg, ...rest })}
 
   /* Button Clear */
-  ${({ clear }) => clear && buttonClear}
-
+  ${clear && buttonClear(rest)}
+  `}
 `;
 
 export const ButtonGroup = styled.div`
