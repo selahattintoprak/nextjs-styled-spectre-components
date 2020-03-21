@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
-
-export const AccordionHeader = styled.label`
+const accordionHeaderStyle = css`
   display: block;
   padding: ${({ theme }) => `${theme.sizes.units[1]} ${theme.sizes.units[2]}`};
 
@@ -8,13 +7,16 @@ export const AccordionHeader = styled.label`
     transition: transform 0.25s;
   }
 `;
+export const AccordionHeader = styled.label`
+  ${accordionHeaderStyle}
+`;
 export const AccordionBody = styled.div`
   margin-bottom: ${({ theme }) => theme.sizes.layoutSpacing};
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.25s;
 `;
-const Accordion = styled.div`
+const accordionStyle = css`
   input:checked ~,
   &[open] {
     & ${AccordionHeader} {
@@ -28,7 +30,21 @@ const Accordion = styled.div`
     }
   }
 `;
+const Accordion = styled.div`
+  ${accordionStyle}
+`;
 Accordion.Header = AccordionHeader;
 Accordion.Body = AccordionBody;
+
+export const Summary = styled.summary`
+  ${accordionHeaderStyle}
+  &::-webkit-details-marker {
+    display: none;
+  }
+`;
+export const Details = styled.details`
+  ${accordionStyle}
+`;
+Details.Summary = Summary;
 
 export default Accordion;

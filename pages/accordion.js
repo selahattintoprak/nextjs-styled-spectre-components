@@ -1,4 +1,4 @@
-import Accordion from "../styled-spectre/Accordion";
+import Accordion, { Details } from "../styled-spectre/Accordion";
 import { IconsStyles, UtilitiesStyles } from "../ui-styles/styles";
 
 export const config = { amp: "hybrid" };
@@ -29,6 +29,13 @@ export default () => (
         </Accordion.Header>
         <Accordion.Body>Accordions content</Accordion.Body>
       </Accordion>
+      <Details open={false}>
+        <Details.Summary>
+          <i class="icon icon-arrow-right mr-1"></i>
+          Title
+        </Details.Summary>
+        <Accordion.Body>Accordions content</Accordion.Body>
+      </Details>
     </div>
     <IconsStyles />
     <UtilitiesStyles />
