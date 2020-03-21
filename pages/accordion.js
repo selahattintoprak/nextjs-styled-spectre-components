@@ -1,7 +1,4 @@
-import Accordions, {
-  AccordionHeader,
-  AccordionBody
-} from "../styled-spectre/Accordion";
+import Accordion from "../styled-spectre/Accordion";
 import { IconsStyles, UtilitiesStyles } from "../ui-styles/styles";
 
 export const config = { amp: "hybrid" };
@@ -19,19 +16,19 @@ export default () => (
       `}
     </style>
     <div>
-      <Accordions>
+      <Accordion>
         <input
           type="checkbox"
           id="accordion-1"
           name="accordion-checkbox"
           hidden
         />
-        <AccordionHeader htmlFor="accordion-1">
+        <Accordion.AccordionHeader htmlFor="accordion-1">
           <i className="icon icon-arrow-right mr-1"></i>
           Title
-        </AccordionHeader>
-        <AccordionBody>Accordions content</AccordionBody>
-      </Accordions>
+        </Accordion.AccordionHeader>
+        <Accordion.AccordionBody>Accordions content</Accordion.AccordionBody>
+      </Accordion>
     </div>
     <IconsStyles />
     <UtilitiesStyles />

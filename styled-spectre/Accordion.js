@@ -14,7 +14,7 @@ export const AccordionBody = styled.div`
   overflow: hidden;
   transition: max-height 0.25s;
 `;
-export default styled.div`
+const Accordion = styled.div`
   input:checked ~,
   &[open] {
     & ${AccordionHeader} {
@@ -28,3 +28,7 @@ export default styled.div`
     }
   }
 `;
+Accordion.AccordionHeader = AccordionHeader;
+Accordion.AccordionBody = AccordionBody;
+
+export default Accordion;
