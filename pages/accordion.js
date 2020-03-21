@@ -27,7 +27,7 @@ export default () => (
           hidden
         />
         <AccordionHeader htmlFor="accordion-1">
-          <i class="icon icon-arrow-right mr-1"></i>
+          <i className="icon icon-arrow-right mr-1"></i>
           Title
         </AccordionHeader>
         <AccordionBody>Accordions content</AccordionBody>
