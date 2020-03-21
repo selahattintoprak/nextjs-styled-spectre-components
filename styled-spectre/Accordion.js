@@ -28,7 +28,7 @@ const Accordion = styled.div`
     }
   }
 `;
-Accordion.AccordionHeader = AccordionHeader;
-Accordion.AccordionBody = AccordionBody;
+Accordion.Header = AccordionHeader;
+Accordion.Body = AccordionBody;
 
 export default Accordion;

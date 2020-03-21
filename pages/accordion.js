@@ -23,11 +23,11 @@ export default () => (
           name="accordion-checkbox"
           hidden
         />
-        <Accordion.AccordionHeader htmlFor="accordion-1">
+        <Accordion.Header htmlFor="accordion-1">
           <i className="icon icon-arrow-right mr-1"></i>
           Title
-        </Accordion.AccordionHeader>
-        <Accordion.AccordionBody>Accordions content</Accordion.AccordionBody>
+        </Accordion.Header>
+        <Accordion.Body>Accordions content</Accordion.Body>
       </Accordion>
     </div>
     <IconsStyles />
