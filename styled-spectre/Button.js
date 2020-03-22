@@ -42,7 +42,6 @@ const buttonBase = ({ theme, withLoading }) => css`
       css`
         &::after {
           border-bottom-color: ${theme.colors.light};
-          border-width: 10px !important;
           border-left-color: ${theme.colors.light};
         }
       `}
