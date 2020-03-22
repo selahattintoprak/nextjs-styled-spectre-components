@@ -3,7 +3,7 @@ import theme2 from "./theme";
 import { darken, rgba } from "polished";
 import { buttonVariant } from "./mixins/button";
 import { controlShadow } from "./mixins/shadow";
-
+import { loading } from "./utilities/loading";
 const buttonBase = ({ theme, withLoading }) => css`
   appearance: none;
   background: ${theme.colors.light};
@@ -53,6 +53,7 @@ const buttonBase = ({ theme, withLoading }) => css`
     opacity: 0.5;
     pointer-events: none;
   }
+  ${withLoading && loading({ theme, withLoading })}
 `;
 const buttonPrimary = ({ theme, withLoading }) => css`
   background: ${theme.colors.primary};
@@ -70,6 +71,7 @@ const buttonPrimary = ({ theme, withLoading }) => css`
     border-color: ${darken(7 / 100, theme.colors.primaryDark)};
     color: ${theme.colors.light};
   }
+  ${withLoading && loading({ theme, withLoading })}
   ${withLoading &&
     css`
       &::after {

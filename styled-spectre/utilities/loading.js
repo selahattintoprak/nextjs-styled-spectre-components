@@ -20,7 +20,7 @@ export const loading = ({ theme, withLoading }) => css`
     position: absolute;
     top: 50%;
     width: ${theme.sizes.units[4]};
-    z-index: ${theme.sizes.zIndex[0]};
+    z-index: ${theme.zIndex[0]};
   }
 
   ${withLoading == "lg" &&

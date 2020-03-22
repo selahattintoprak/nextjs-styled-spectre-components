@@ -45,10 +45,10 @@ export default () => (
       <Button disabled tabIndex="-1">
         disabled button
       </Button>
-      <Button className="loading" withLoading>
-        button
+      <Button  withLoading="lg">
+        button withLoading
       </Button>
-      <Button primary className="loading" withLoading>
+      <Button primary withLoading>
         primary button
       </Button>
       <ButtonGroup block>
